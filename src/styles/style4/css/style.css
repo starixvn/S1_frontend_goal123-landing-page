@@ -116,7 +116,8 @@ input{
   margin: auto;
   height: 10vw;
   background: #1d1d1d;
-  width: 60vw;
+  width: 60vw;  
+  color: white;
 }
 ::-webkit-input-placeholder {
   color: white;
