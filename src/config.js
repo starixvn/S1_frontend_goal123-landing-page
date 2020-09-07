@@ -1,16 +1,11 @@
 export const defStyle = {
-	style1: "style1",
-	style2: "style2",
-	style3: "style3",
-	style4: "style4"
+	desktopStyle1: "desktopStyle1",
+	desktopStyle2: "desktopStyle2",
+	mobileStyle1: "mobileStyle1",
+	mobileStyle2: "mobileStyle2"
 };
 
-// style1: desktop-version1
-// style2: desktop-version2
-// style3: mobile-version1
-// style4: mobile-version2
-
-export const SiteStyle = defStyle.style4;
+export const SiteStyle = defStyle.mobileStyle2;
 
 export default process.env.NODE_ENV === "production"
 	? {
