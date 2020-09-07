@@ -190,7 +190,6 @@ export default props => {
 						const errorCode = res.data.errorCode;
 						const message = res.data.message;
 						if (errorCode === 0) {
-							console.log("register success!!!");
 						} else if (
 							errorCode === -2 ||
 							errorCode === -5 ||
