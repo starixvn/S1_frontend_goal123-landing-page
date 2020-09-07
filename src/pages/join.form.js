@@ -1,11 +1,16 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { i18nContext } from "../components/context";
 import {
-	api_site_Register,
+	// api_site_Register,
 	api_site_ExistsUserName
 } from "../service/api/site";
-import { getUrlParameter, readCookie } from "../components/common";
+import {
+	// getUrlParameter,
+	// readCookie,
+	MobileAndTabletCheck
+} from "../components/common";
 import Inputbox from "../components/inputbox";
+import config from "../config";
 
 const initValue = {
 	username: "",
@@ -46,6 +51,7 @@ export default props => {
 	const [userValue, setUserValue] = useState(initValue);
 	const [tip, setTip] = useState(initTip);
 	const isMountedRef = useRef(null);
+	const xxxRef = useRef(null);
 
 	useEffect(() => {
 		isMountedRef.current = true;
@@ -173,58 +179,7 @@ export default props => {
 		e.preventDefault();
 		let checked = checkAll();
 		if (checked) {
-			let regData = {
-				UserName: userValue.username,
-				Userpwd: userValue.password,
-				// Email: userValue.email,
-				CurrencyId: 51,
-				UserLang: defaultLangId
-			};
-
-			regData["RefId"] = getUrlParameter("RefId") || readCookie("RefId");
-			regData["AffId"] = getUrlParameter("AffId") || readCookie("AffId");
-			regData["Aff"] = getUrlParameter("Aff") || readCookie("Aff");
-			api_site_Register(regData).then(
-				res => {
-					if (isMountedRef.current) {
-						const errorCode = res.data.errorCode;
-						const message = res.data.message;
-						if (errorCode === 0) {
-						} else if (
-							errorCode === -2 ||
-							errorCode === -5 ||
-							errorCode === -19
-						) {
-							setTip(prev => {
-								return {
-									...prev,
-									username: {
-										checked: false,
-										msg: message
-									}
-								};
-							});
-						} else if (errorCode === -3) {
-							setTip(prev => {
-								return {
-									...prev,
-									password: {
-										checked: false,
-										msg: message
-									}
-								};
-							});
-						} else {
-							alert(i18n[message]);
-						}
-					}
-				},
-				err => {
-					if (isMountedRef.current) {
-						alert(i18n["msg_ApiServerError"]);
-					}
-				}
-			);
+			xxxRef.current.submit();
 		}
 	};
 
@@ -252,6 +207,46 @@ export default props => {
 				<button>
 					<img alt="button_img" src={props.buttonSrc} />
 				</button>
+			</form>
+
+			<form
+				ref={xxxRef}
+				action={`${
+					MobileAndTabletCheck()
+						? config.openMobileURL
+						: config.openDesktopURL
+				}/${defaultLangId}/Extra/Signup`}
+				method="post">
+				<input
+					type="hidden"
+					name="UserName"
+					value={userValue.username}
+					onChange={() => {}}
+				/>
+				<input
+					type="hidden"
+					name="Userpwd"
+					value={userValue.password}
+					onChange={() => {}}
+				/>
+				<input
+					type="hidden"
+					name="CurrencyId"
+					value={51}
+					onChange={() => {}}
+				/>
+				<input
+					type="hidden"
+					name="SignupUrl"
+					value={window.location.host}
+					onChange={() => {}}
+				/>
+				<input
+					type="hidden"
+					name="UserLang"
+					value={defaultLangId}
+					onChange={() => {}}
+				/>
 			</form>
 		</>
 	);
