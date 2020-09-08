@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { SiteStyle } from "./config";
+import { SiteStyle, GACode } from "./config";
+import { Helmet } from "react-helmet";
 
 const _style = SiteStyle;
 
@@ -24,6 +25,7 @@ class Content extends Component {
 			<>
 				{this.state.loaded === true ? (
 					<React.StrictMode>
+						<GATag gaCode={GACode[_style]} />
 						<App />
 					</React.StrictMode>
 				) : null}
@@ -31,5 +33,24 @@ class Content extends Component {
 		);
 	}
 }
+
+const GATag = ({ gaCode }) => {
+	return (
+		<Helmet>
+			<script
+				async
+				src={
+					"https://www.googletagmanager.com/gtag/js?id=" + gaCode
+				}></script>
+			<script>
+				{`window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', '${gaCode}');`}
+			</script>
+		</Helmet>
+	);
+};
 
 ReactDOM.render(<Content />, document.getElementById("root"));
