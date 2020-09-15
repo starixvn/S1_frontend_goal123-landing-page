@@ -34,6 +34,9 @@ html,body{
   margin: 5vw;
   text-align: center;
 }
+.title img{
+  width: 100%;
+}
 .title span{
   -webkit-text-fill-color: transparent;
 }

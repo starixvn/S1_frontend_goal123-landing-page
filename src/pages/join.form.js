@@ -1,16 +1,10 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { i18nContext } from "../components/context";
-import {
-	// api_site_Register,
-	api_site_ExistsUserName
-} from "../service/api/site";
-import {
-	// getUrlParameter,
-	// readCookie,
-	MobileAndTabletCheck
-} from "../components/common";
+import { api_site_ExistsUserName } from "../service/api/site";
+import { MobileAndTabletCheck } from "../components/common";
 import Inputbox from "../components/inputbox";
 import config from "../config";
+import { SiteStyle } from "../config";
 
 const initValue = {
 	username: "",
@@ -94,10 +88,24 @@ export default props => {
 		});
 	};
 
-	const usernameCheck = val => {
-		let checked = false;
-		let msg = "";
+	const nameRepeatCheck = async val => {
+		try {
+			const res = await api_site_ExistsUserName({ UserName: val });
+			if (isMountedRef.current) {
+				if (res.data.errorCode === 0) {
+					return !res.data.data;
+				}
+			}
+		} catch (error) {
+			if (isMountedRef.current && error.response) {
+				alert(i18n["msg_ApiServerError"]);
+			}
+		}
+	};
 
+	const usernameCheck = async val => {
+		let checked = true;
+		let msg = "";
 		if (val === "") {
 			checked = false;
 			msg = "msg_UsernameReq";
@@ -105,58 +113,18 @@ export default props => {
 			if (val.length < 6 || val.length > 18) {
 				checked = false;
 				msg = "msg_UsernameLength";
-			} else {
-				checked = true;
+			} else if ((await nameRepeatCheck(val)) === false) {
+				checked = false;
+				msg = "msg_UsernameNotAvailable";
 			}
 		}
-
-		if (checked === true) {
-			api_site_ExistsUserName({ UserName: val }).then(
-				res => {
-					if (isMountedRef.current) {
-						if (res.data.errorCode === 0) {
-							if (res.data.data === true) {
-								setTip(prev => {
-									return {
-										...prev,
-										username: {
-											checked: false,
-											msg:
-												i18n["msg_UsernameNotAvailable"]
-										}
-									};
-								});
-							} else {
-								setTip(prev => {
-									return {
-										...prev,
-										username: {
-											checked: true,
-											msg: ""
-										}
-									};
-								});
-							}
-						}
-					}
-				},
-				err => {
-					if (isMountedRef.current) {
-						alert(i18n["msg_ApiServerError"]);
-					}
-				}
-			);
-		}
-
 		return { checked, msg };
 	};
 
-	const checkAll = () => {
-		let _usernameCheck = usernameCheck(userValue.username);
+	const checkAll = async () => {
+		let _usernameCheck = await usernameCheck(userValue.username);
 		let _passwordCheck = passwordCheck(userValue.password);
-
 		let checked = _usernameCheck.checked && _passwordCheck.checked;
-
 		if (!checked) {
 			setTip(prev => {
 				return {
@@ -175,10 +143,10 @@ export default props => {
 		return checked;
 	};
 
-	const clickSubmit = e => {
+	const clickSubmit = async e => {
 		e.preventDefault();
-		let checked = checkAll();
-		if (checked) {
+		const result = await checkAll();
+		if (result) {
 			xxxRef.current.submit();
 		}
 	};
@@ -193,7 +161,13 @@ export default props => {
 					checked={tip.username.checked}
 					onChange={EditField.bind(null, "username")}
 					onBlur={checkValue.bind(null, "username")}
-					checkIcon="icon icon1"
+					beforeIcon={SiteStyle === "desktopStyle4" ? "icon1" : null}
+					checkIcon={
+						SiteStyle === "desktopStyle3" ||
+						SiteStyle === "desktopStyle4"
+							? null
+							: "icon icon1"
+					}
 				/>
 				<Inputbox
 					displayText="Mật khẩu"
@@ -202,7 +176,14 @@ export default props => {
 					checked={tip.password.checked}
 					onChange={EditField.bind(null, "password")}
 					onBlur={checkValue.bind(null, "password")}
-					checkIcon="icon icon2"
+					beforeIcon={SiteStyle === "desktopStyle4" ? "icon2" : null}
+					checkIcon={
+						SiteStyle === "desktopStyle3" ||
+						SiteStyle === "desktopStyle4"
+							? null
+							: "icon icon2"
+					}
+					// eyeIcon={SiteStyle === "desktopStyle4"}
 				/>
 				<button>
 					<img alt="button_img" src={props.buttonSrc} />

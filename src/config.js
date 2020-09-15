@@ -1,6 +1,8 @@
 export const defStyle = {
 	desktopStyle1: "desktopStyle1",
 	desktopStyle2: "desktopStyle2",
+	desktopStyle3: "desktopStyle3",
+	desktopStyle4: "desktopStyle4",
 	mobileStyle1: "mobileStyle1",
 	mobileStyle2: "mobileStyle2"
 };
@@ -8,11 +10,13 @@ export const defStyle = {
 export const GACode = {
 	[defStyle.desktopStyle1]: "UA-163812389-3",
 	[defStyle.desktopStyle2]: "UA-163812389-4",
+	[defStyle.desktopStyle3]: "UA-163812389-5",
+	[defStyle.desktopStyle4]: "UA-163812389-6",
 	[defStyle.mobileStyle1]: "UA-163812389-3",
 	[defStyle.mobileStyle2]: "UA-163812389-4"
 };
 
-export const SiteStyle = defStyle.desktopStyle1;
+export const SiteStyle = defStyle.desktopStyle3;
 
 export default process.env.NODE_ENV === "production"
 	? {

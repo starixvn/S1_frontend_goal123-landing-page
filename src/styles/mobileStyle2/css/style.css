@@ -35,6 +35,10 @@ html,body{
 }
 .title{
   text-align: center;
+  padding: 3vw 10vw;
+}
+.title img{
+  width: 100%;
 }
 .title span{
   -webkit-text-fill-color: transparent;

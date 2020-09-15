@@ -1,27 +1,64 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SiteStyle, defStyle } from "../config";
-import logoSrc1 from "../styles/desktopStyle1/img/logo.png";
-import logoSrc2 from "../styles/desktopStyle2/img/logo.png";
-import logoSrc3 from "../styles/mobileStyle1/img/logo.png";
-import logoSrc4 from "../styles/mobileStyle2/img/logo.png";
-import buttonSrc1 from "../styles/desktopStyle1/img/button.png";
-import buttonSrc2 from "../styles/desktopStyle2/img/button.png";
-import buttonSrc3 from "../styles/mobileStyle1/img/button.png";
-import buttonSrc4 from "../styles/mobileStyle2/img/button.png";
+import { getUrlParameter } from "../components/common";
 import Form from "./join.form";
+
+import logo_desktopStyle1 from "../styles/desktopStyle1/img/logo.png";
+import logo_desktopStyle2 from "../styles/desktopStyle2/img/logo.png";
+import logo_desktopStyle3 from "../styles/desktopStyle3/img/logo.png";
+import logo_desktopStyle4 from "../styles/desktopStyle4/img/logo.png";
+import logo_mobileStyle1 from "../styles/mobileStyle1/img/logo.png";
+import logo_mobileStyle2 from "../styles/mobileStyle2/img/logo.png";
+
+import title_desktopStyle1 from "../styles/desktopStyle1/img/title.png";
+import title_desktopStyle2 from "../styles/desktopStyle2/img/title.png";
+import title_desktopStyle3 from "../styles/desktopStyle3/img/title.png";
+import title_desktopStyle4 from "../styles/desktopStyle4/img/title.png";
+import title_mobileStyle1 from "../styles/mobileStyle1/img/title.png";
+import title_mobileStyle2 from "../styles/mobileStyle2/img/title.png";
+
+import button_desktopStyle1 from "../styles/desktopStyle1/img/button.png";
+import button_desktopStyle2 from "../styles/desktopStyle2/img/button.png";
+import button_desktopStyle3 from "../styles/desktopStyle3/img/button.png";
+import button_desktopStyle4 from "../styles/desktopStyle4/img/button.png";
+import button_mobileStyle1 from "../styles/mobileStyle1/img/button.png";
+import button_mobileStyle2 from "../styles/mobileStyle2/img/button.png";
 
 const _style = SiteStyle;
 
 const getLogoSrc = () => {
 	switch (_style) {
 		case defStyle.desktopStyle1:
-			return logoSrc1;
+			return logo_desktopStyle1;
 		case defStyle.desktopStyle2:
-			return logoSrc2;
+			return logo_desktopStyle2;
+		case defStyle.desktopStyle3:
+			return logo_desktopStyle3;
+		case defStyle.desktopStyle4:
+			return logo_desktopStyle4;
 		case defStyle.mobileStyle1:
-			return logoSrc3;
+			return logo_mobileStyle1;
 		case defStyle.mobileStyle2:
-			return logoSrc4;
+			return logo_mobileStyle2;
+		default:
+			break;
+	}
+};
+
+const getTitleSrc = () => {
+	switch (_style) {
+		case defStyle.desktopStyle1:
+			return title_desktopStyle1;
+		case defStyle.desktopStyle2:
+			return title_desktopStyle2;
+		case defStyle.desktopStyle3:
+			return title_desktopStyle3;
+		case defStyle.desktopStyle4:
+			return title_desktopStyle4;
+		case defStyle.mobileStyle1:
+			return title_mobileStyle1;
+		case defStyle.mobileStyle2:
+			return title_mobileStyle2;
 		default:
 			break;
 	}
@@ -30,19 +67,32 @@ const getLogoSrc = () => {
 const getButtonSrc = () => {
 	switch (_style) {
 		case defStyle.desktopStyle1:
-			return buttonSrc1;
+			return button_desktopStyle1;
 		case defStyle.desktopStyle2:
-			return buttonSrc2;
+			return button_desktopStyle2;
+		case defStyle.desktopStyle3:
+			return button_desktopStyle3;
+		case defStyle.desktopStyle4:
+			return button_desktopStyle4;
 		case defStyle.mobileStyle1:
-			return buttonSrc3;
+			return button_mobileStyle1;
 		case defStyle.mobileStyle2:
-			return buttonSrc4;
+			return button_mobileStyle2;
 		default:
 			break;
 	}
 };
 
 export default () => {
+	useEffect(() => {
+		let errorCode = getUrlParameter("errorCode");
+		let message = getUrlParameter("message");
+
+		if (message) {
+			alert(message);
+		}
+	}, []);
+
 	return (
 		<div className="wallpaper">
 			<div className={_style === defStyle.mobileStyle2 ? "module" : ""}>
@@ -54,10 +104,24 @@ export default () => {
 						_style === defStyle.mobileStyle1 ? "module" : ""
 					}>
 					<div className="title">
-						<span className="gray">N.Ạ.P ĐẦU</span>
-						<span className="yellow">x125%</span>
-						<br />
-						<span className="fire">LEN DEN 12TR500</span>
+						<img
+							src={getTitleSrc()}
+							className={
+								_style === defStyle.desktopStyle3 ||
+								_style === defStyle.desktopStyle4
+									? "dtitle"
+									: ""
+							}
+							alt="dtitle"
+						/>
+
+						{_style === defStyle.desktopStyle3 ? (
+							<img
+								src="img/mtitle.png"
+								className="mtitle"
+								alt="mtitle"
+							/>
+						) : null}
 					</div>
 					<Form buttonSrc={getButtonSrc()} />
 				</div>
