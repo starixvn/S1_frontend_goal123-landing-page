@@ -16,7 +16,7 @@ export const GACode = {
 	[defStyle.mobileStyle2]: "UA-163812389-4"
 };
 
-export const SiteStyle = defStyle.desktopStyle3;
+export const SiteStyle = defStyle.desktopStyle1;
 
 export default process.env.NODE_ENV === "production"
 	? {
