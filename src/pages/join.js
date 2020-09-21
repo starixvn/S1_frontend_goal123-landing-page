@@ -24,6 +24,8 @@ import button_desktopStyle4 from "../styles/desktopStyle4/img/button.png";
 import button_mobileStyle1 from "../styles/mobileStyle1/img/button.png";
 import button_mobileStyle2 from "../styles/mobileStyle2/img/button.png";
 
+import title_desktopStyle3_mtitle from "../styles/desktopStyle3/img/mtitle.png";
+
 const _style = SiteStyle;
 
 const getLogoSrc = () => {
@@ -117,7 +119,7 @@ export default () => {
 
 						{_style === defStyle.desktopStyle3 ? (
 							<img
-								src="img/mtitle.png"
+								src={title_desktopStyle3_mtitle}
 								className="mtitle"
 								alt="mtitle"
 							/>
