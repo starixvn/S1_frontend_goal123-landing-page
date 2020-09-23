@@ -159,7 +159,6 @@ export default props => {
 		e.preventDefault();
 		const result = await checkAll();
 		if (result) {
-			console.log("do submit");
 			xxxRef.current.submit();
 		}
 	};
