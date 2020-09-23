@@ -46,11 +46,23 @@ export default props => {
 	const [tip, setTip] = useState(initTip);
 	const isMountedRef = useRef(null);
 	const xxxRef = useRef(null);
+	const [showPsw, setShowPsw] = useState(false);
+
+	const style1 = SiteStyle === "desktopStyle1";
+	const style2 = SiteStyle === "desktopStyle2";
+	const style3 = SiteStyle === "desktopStyle3";
+	const style4 = SiteStyle === "desktopStyle4";
+	const style5 = SiteStyle === "desktopStyle5";
+	const style6 = SiteStyle === "desktopStyle6";
 
 	useEffect(() => {
 		isMountedRef.current = true;
 		return () => (isMountedRef.current = false);
 	});
+
+	const showPswHandler = () => {
+		setShowPsw(!showPsw);
+	};
 
 	const EditField = (col, e) => {
 		let val = e.target.value;
@@ -62,13 +74,13 @@ export default props => {
 		}));
 	};
 
-	const checkValue = (col, e) => {
+	const checkValue = async (col, e) => {
 		let val = e.target.value;
 		let checked = true;
 		let msg = "";
 
 		if (col === "username") {
-			let result = usernameCheck(val);
+			let result = await usernameCheck(val);
 			checked = result.checked;
 			msg = result.msg;
 		} else if (col === "password") {
@@ -147,48 +159,88 @@ export default props => {
 		e.preventDefault();
 		const result = await checkAll();
 		if (result) {
+			console.log("do submit");
 			xxxRef.current.submit();
 		}
 	};
 
 	return (
 		<>
-			<form className="info" onSubmit={clickSubmit}>
-				<Inputbox
-					displayText="Tên đăng nhập"
-					value={userValue.username}
-					tip={tip.username.msg}
-					checked={tip.username.checked}
-					onChange={EditField.bind(null, "username")}
-					onBlur={checkValue.bind(null, "username")}
-					beforeIcon={SiteStyle === "desktopStyle4" ? "icon1" : null}
-					checkIcon={
-						SiteStyle === "desktopStyle3" ||
-						SiteStyle === "desktopStyle4"
-							? null
-							: "icon icon1"
-					}
-				/>
-				<Inputbox
-					displayText="Mật khẩu"
-					value={userValue.password}
-					tip={tip.password.msg}
-					checked={tip.password.checked}
-					onChange={EditField.bind(null, "password")}
-					onBlur={checkValue.bind(null, "password")}
-					beforeIcon={SiteStyle === "desktopStyle4" ? "icon2" : null}
-					checkIcon={
-						SiteStyle === "desktopStyle3" ||
-						SiteStyle === "desktopStyle4"
-							? null
-							: "icon icon2"
-					}
-					// eyeIcon={SiteStyle === "desktopStyle4"}
-				/>
-				<button>
-					<img alt="button_img" src={props.buttonSrc} />
-				</button>
-			</form>
+			{style1 || style2 || style3 || style4 ? (
+				<form className="info" onSubmit={clickSubmit}>
+					<Inputbox
+						displayText="Tên đăng nhập"
+						value={userValue.username}
+						tip={tip.username.msg}
+						checked={tip.username.checked}
+						onChange={EditField.bind(null, "username")}
+						onBlur={checkValue.bind(null, "username")}
+						beforeIcon={style4 ? "icon1" : null}
+						afterIcon={style3 || style4 ? null : "icon icon1"}
+					/>
+					<Inputbox
+						displayText="Mật khẩu"
+						value={userValue.password}
+						tip={tip.password.msg}
+						checked={tip.password.checked}
+						onChange={EditField.bind(null, "password")}
+						onBlur={checkValue.bind(null, "password")}
+						beforeIcon={style4 ? "icon2" : null}
+						afterIcon={style3 || style4 ? null : "icon icon2"}
+					/>
+					<button>
+						<img alt="button_img" src={props.buttonSrc} />
+					</button>
+				</form>
+			) : (
+				<form className="info" onSubmit={clickSubmit}>
+					<div className="inputbox">
+						<Inputbox
+							displayText="Tên đăng nhập"
+							value={userValue.username}
+							checked={tip.username.checked}
+							onChange={EditField.bind(null, "username")}
+							onBlur={checkValue.bind(null, "username")}
+							beforeIcon="icon1"
+						/>
+					</div>
+					{tip ? (
+						<div className="tip active">{tip.username.msg}</div>
+					) : null}
+					<div className="inputbox">
+						<Inputbox
+							inputType={`${!showPsw ? "password" : "text"}`}
+							showPsw={showPsw}
+							showPswHandler={showPswHandler}
+							displayText="Mật khẩu"
+							value={userValue.password}
+							checked={tip.password.checked}
+							onChange={EditField.bind(null, "password")}
+							onBlur={checkValue.bind(null, "password")}
+							beforeIcon="icon2"
+							eyeIcon={true}
+						/>
+					</div>
+					{tip ? (
+						<div className="tip active">{tip.password.msg}</div>
+					) : null}
+					{style5 ? (
+						<div className="btn-group">
+							<button>
+								<img src={props.buttonSrc} />
+							</button>
+						</div>
+					) : null}
+				</form>
+			)}
+
+			{style6 ? (
+				<div className="btn-group">
+					<button onClick={clickSubmit}>
+						<img src={props.buttonSrc} />
+					</button>
+				</div>
+			) : null}
 
 			<form
 				ref={xxxRef}

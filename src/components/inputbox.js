@@ -19,7 +19,9 @@ export default props => {
 			{props.checkIcon ? (
 				<i className={` icon ${props.checkIcon}`}></i>
 			) : null}
-			{props.eyeIcon ? <i className={`eye`}></i> : null}
+			{props.showPsw || props.inputType === "password" ? (
+				<i className="eye" onClick={props.showPswHandler}></i>
+			) : null}
 			{props.tip ? <div className="tip active">{props.tip}</div> : null}
 		</>
 	);
