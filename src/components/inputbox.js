@@ -7,6 +7,7 @@ export default props => {
 				<i className={` icon ${props.beforeIcon}`}></i>
 			) : null}
 			<input
+				type={props.inputType ?? "text"}
 				onChange={props.onChange}
 				onBlur={props.onBlur}
 				placeholder={props.displayText}
