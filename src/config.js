@@ -1,12 +1,12 @@
 export const defStyle = {
-	desktopStyle1: "desktopStyle1",
-	desktopStyle2: "desktopStyle2",
-	desktopStyle3: "desktopStyle3",
-	desktopStyle4: "desktopStyle4",
+	desktopStyle1: "desktopStyle1", //style5
+	desktopStyle2: "desktopStyle2", // -style6
+	desktopStyle3: "desktopStyle3", //style5
+	desktopStyle4: "desktopStyle4", // -style6
 	desktopStyle5: "desktopStyle5",
-	desktopStyle6: "desktopStyle6",
-	mobileStyle1: "mobileStyle1",
-	mobileStyle2: "mobileStyle2"
+	desktopStyle6: "desktopStyle6"
+	// mobileStyle1: "mobileStyle1",
+	// mobileStyle2: "mobileStyle2"
 };
 
 export const GACode = {
@@ -15,9 +15,9 @@ export const GACode = {
 	[defStyle.desktopStyle3]: "UA-163812389-5",
 	[defStyle.desktopStyle4]: "UA-163812389-6",
 	[defStyle.desktopStyle5]: "UA-163812389-8",
-	[defStyle.desktopStyle6]: "UA-163812389-9",
-	[defStyle.mobileStyle1]: "UA-163812389-3",
-	[defStyle.mobileStyle2]: "UA-163812389-4"
+	[defStyle.desktopStyle6]: "UA-163812389-9"
+	// [defStyle.mobileStyle1]: "UA-163812389-3",
+	// [defStyle.mobileStyle2]: "UA-163812389-4"
 };
 
 export const SiteStyle = defStyle.desktopStyle1;
