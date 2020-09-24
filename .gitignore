@@ -269,3 +269,5 @@ MemberSite/MemberSite/Properties/PublishProfiles/FolderProfile.pubxml
 
 build/
 build/*
+build_all
+build_all/*

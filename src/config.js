@@ -27,7 +27,10 @@ export const GACode = {
 	[defStyle[6]]: "UA-163812389-9"
 };
 
-export const SiteStyle = defStyle[6];
+export const SiteStyle =
+	process.env.NODE_ENV === "production"
+		? process.env.REACT_APP_STYLE
+		: defStyle[1];
 
 export default process.env.NODE_ENV === "production"
 	? {
