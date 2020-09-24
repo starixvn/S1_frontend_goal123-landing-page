@@ -48,12 +48,7 @@ export default props => {
 	const xxxRef = useRef(null);
 	const [showPsw, setShowPsw] = useState(false);
 
-	const style1 = SiteStyle === "desktopStyle1";
-	const style2 = SiteStyle === "desktopStyle2";
-	const style3 = SiteStyle === "desktopStyle3";
-	const style4 = SiteStyle === "desktopStyle4";
-	const style5 = SiteStyle === "desktopStyle5";
-	const style6 = SiteStyle === "desktopStyle6";
+	const isStyle1 = SiteStyle % 2 !== 0;
 
 	useEffect(() => {
 		isMountedRef.current = true;
@@ -223,20 +218,20 @@ export default props => {
 				{tip ? (
 					<div className="tip active">{tip.password.msg}</div>
 				) : null}
-				{style1 || style3 || style5 ? (
+				{isStyle1 ? (
 					<div className="btn-group">
 						<button>
-							<img src={props.buttonSrc} />
+							<img src={props.buttonSrc} alt="submit button" />
 						</button>
 					</div>
 				) : null}
 			</form>
 			{/* )} */}
 
-			{style2 || style4 || style6 ? (
+			{!isStyle1 ? (
 				<div className="btn-group">
 					<button onClick={clickSubmit}>
-						<img src={props.buttonSrc} />
+						<img src={props.buttonSrc} alt="submit button" />
 					</button>
 				</div>
 			) : null}

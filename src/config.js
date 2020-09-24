@@ -1,26 +1,33 @@
+const defStyleFolderList = {
+	desktopStyle1_3_5: "desktopStyle1_3_5",
+	desktopStyle2_4_6: "desktopStyle2_4_6"
+};
+
+export const defStyleFolder = style => {
+	return style % 2 === 0
+		? defStyleFolderList.desktopStyle2_4_6
+		: defStyleFolderList.desktopStyle1_3_5;
+};
+
 export const defStyle = {
-	desktopStyle1: "desktopStyle1", //style5
-	desktopStyle2: "desktopStyle2", // -style6
-	desktopStyle3: "desktopStyle3", //style5
-	desktopStyle4: "desktopStyle4", // -style6
-	desktopStyle5: "desktopStyle5",
-	desktopStyle6: "desktopStyle6"
-	// mobileStyle1: "mobileStyle1",
-	// mobileStyle2: "mobileStyle2"
+	1: 1, //style5
+	2: 2, //style6
+	3: 3, //style5
+	4: 4, //style6
+	5: 5,
+	6: 6
 };
 
 export const GACode = {
-	[defStyle.desktopStyle1]: "UA-163812389-3",
-	[defStyle.desktopStyle2]: "UA-163812389-4",
-	[defStyle.desktopStyle3]: "UA-163812389-5",
-	[defStyle.desktopStyle4]: "UA-163812389-6",
-	[defStyle.desktopStyle5]: "UA-163812389-8",
-	[defStyle.desktopStyle6]: "UA-163812389-9"
-	// [defStyle.mobileStyle1]: "UA-163812389-3",
-	// [defStyle.mobileStyle2]: "UA-163812389-4"
+	[defStyle[1]]: "UA-163812389-3",
+	[defStyle[2]]: "UA-163812389-4",
+	[defStyle[3]]: "UA-163812389-5",
+	[defStyle[4]]: "UA-163812389-6",
+	[defStyle[5]]: "UA-163812389-8",
+	[defStyle[6]]: "UA-163812389-9"
 };
 
-export const SiteStyle = defStyle.desktopStyle1;
+export const SiteStyle = defStyle[6];
 
 export default process.env.NODE_ENV === "production"
 	? {

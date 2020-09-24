@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { SiteStyle, GACode } from "./config";
+import { SiteStyle, GACode, defStyleFolder } from "./config";
 import { Helmet } from "react-helmet";
 
-const _style = SiteStyle;
+const _style = defStyleFolder(SiteStyle);
 
 class Content extends Component {
 	constructor(props) {
