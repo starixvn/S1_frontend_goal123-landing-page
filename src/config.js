@@ -13,7 +13,7 @@ export const GACode = {
 export const SiteStyle =
 	process.env.NODE_ENV === "production"
 		? process.env.REACT_APP_STYLE
-		: defStyle[1];
+		: defStyle[3];
 
 export const defStyleFolder = () => {
 	return `desktopStyle${SiteStyle}`;
@@ -28,9 +28,15 @@ export default process.env.NODE_ENV === "production"
 			t_and_cURL: ""
 	  }
 	: {
-			apiURL: "http://www.n88dev.com",
-			imgUrl: "http://www.n88dev.com",
-			t_and_cURL: "http://www.n88dev.com",
-			openMobileURL: "http://www.n88dev.com",
-			openDesktopURL: "http://www.n88dev.com"
+			apiURL: "http://52.77.157.115:5068",
+			imgUrl: "http://52.77.157.115:5068",
+			t_and_cURL: "http://52.77.157.115:5068",
+			openMobileURL: "http://52.77.157.115:5068",
+			openDesktopURL: "http://52.77.157.115:5068"
+
+			// apiURL: "http://www.n88dev.com",
+			// imgUrl: "http://www.n88dev.com",
+			// t_and_cURL: "http://www.n88dev.com",
+			// openMobileURL: "http://www.n88dev.com",
+			// openDesktopURL: "http://www.n88dev.com"
 	  };
