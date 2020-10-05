@@ -1,36 +1,23 @@
-const defStyleFolderList = {
-	desktopStyle1_3_5: "desktopStyle1_3_5",
-	desktopStyle2_4_6: "desktopStyle2_4_6"
-};
-
-export const defStyleFolder = style => {
-	return style % 2 === 0
-		? defStyleFolderList.desktopStyle2_4_6
-		: defStyleFolderList.desktopStyle1_3_5;
-};
-
 export const defStyle = {
-	1: 1, //style5
-	2: 2, //style6
-	3: 3, //style5
-	4: 4, //style6
-	5: 5,
-	6: 6
+	1: 1,
+	2: 2,
+	3: 3
 };
 
 export const GACode = {
 	[defStyle[1]]: "UA-163812389-3",
 	[defStyle[2]]: "UA-163812389-4",
-	[defStyle[3]]: "UA-163812389-5",
-	[defStyle[4]]: "UA-163812389-6",
-	[defStyle[5]]: "UA-163812389-8",
-	[defStyle[6]]: "UA-163812389-9"
+	[defStyle[3]]: "UA-163812389-5"
 };
 
 export const SiteStyle =
 	process.env.NODE_ENV === "production"
 		? process.env.REACT_APP_STYLE
 		: defStyle[1];
+
+export const defStyleFolder = () => {
+	return `desktopStyle${SiteStyle}`;
+};
 
 export default process.env.NODE_ENV === "production"
 	? {

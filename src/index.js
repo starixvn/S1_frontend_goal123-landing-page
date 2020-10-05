@@ -4,7 +4,7 @@ import App from "./App";
 import { SiteStyle, GACode, defStyleFolder } from "./config";
 import { Helmet } from "react-helmet";
 
-const _style = defStyleFolder(SiteStyle);
+const _style = defStyleFolder();
 
 class Content extends Component {
 	constructor(props) {

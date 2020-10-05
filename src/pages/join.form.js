@@ -4,7 +4,6 @@ import { api_site_ExistsUserName } from "../service/api/site";
 import { MobileAndTabletCheck } from "../components/common";
 import Inputbox from "../components/inputbox";
 import config from "../config";
-import { SiteStyle } from "../config";
 
 const initValue = {
 	username: "",
@@ -47,8 +46,6 @@ export default props => {
 	const isMountedRef = useRef(null);
 	const xxxRef = useRef(null);
 	const [showPsw, setShowPsw] = useState(false);
-
-	const isStyle1 = SiteStyle % 2 !== 0;
 
 	useEffect(() => {
 		isMountedRef.current = true;
@@ -160,33 +157,6 @@ export default props => {
 
 	return (
 		<>
-			{/* {style1 || style2 || style3 || style4 ? (
-				<form className="info" onSubmit={clickSubmit}>
-					<Inputbox
-						displayText="Tên đăng nhập"
-						value={userValue.username}
-						tip={tip.username.msg}
-						checked={tip.username.checked}
-						onChange={EditField.bind(null, "username")}
-						onBlur={checkValue.bind(null, "username")}
-						beforeIcon={style4 ? "icon1" : null}
-						afterIcon={style3 || style4 ? null : "icon icon1"}
-					/>
-					<Inputbox
-						displayText="Mật khẩu"
-						value={userValue.password}
-						tip={tip.password.msg}
-						checked={tip.password.checked}
-						onChange={EditField.bind(null, "password")}
-						onBlur={checkValue.bind(null, "password")}
-						beforeIcon={style4 ? "icon2" : null}
-						afterIcon={style3 || style4 ? null : "icon icon2"}
-					/>
-					<button>
-						<img alt="button_img" src={props.buttonSrc} />
-					</button>
-				</form>
-			) : ( */}
 			<form className="info" onSubmit={clickSubmit}>
 				<div className="inputbox">
 					<Inputbox
@@ -218,23 +188,13 @@ export default props => {
 				{tip ? (
 					<div className="tip active">{tip.password.msg}</div>
 				) : null}
-				{isStyle1 ? (
-					<div className="btn-group">
-						<button>
-							<img src={props.buttonSrc} alt="submit button" />
-						</button>
-					</div>
-				) : null}
 			</form>
-			{/* )} */}
 
-			{!isStyle1 ? (
-				<div className="btn-group">
-					<button onClick={clickSubmit}>
-						<img src={props.buttonSrc} alt="submit button" />
-					</button>
-				</div>
-			) : null}
+			<div className="btn-group">
+				<button onClick={clickSubmit}>
+					<img src={props.buttonSrc} alt="submit button" />
+				</button>
+			</div>
 
 			<form
 				ref={xxxRef}
