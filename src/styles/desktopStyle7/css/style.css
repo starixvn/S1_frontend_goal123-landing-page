@@ -1,0 +1,151 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@900&display=swap');
+html,body{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+#root,div[tabindex="-1"]{
+  height: 100%;
+}
+img{
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+body{  
+  background: url(../img/bg.jpg)no-repeat top center / auto auto;
+}
+.wallpaper{
+  width: 613px;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  /* transform: translateY(-50%); */
+}
+.logo{
+  max-width: 340px;
+  margin: auto;
+}
+.title {
+  margin-top: 3vw;
+}
+.info{
+  margin: 20px auto;
+  max-width: 400px;
+}
+.btn-group{
+  display: flex;
+  justify-content: center;
+}
+button{
+  cursor: pointer;
+  flex: 0 0 49%;
+}
+button img{
+  width: min-content;
+}
+.inputbox{
+  position: relative;
+  border: 2px solid  #ffcb14;
+  background: white;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  height: 40px;
+  border-radius: 5px;
+}
+input{
+  border: 0;
+  height: 60px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  flex: auto;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  box-shadow: 0 0 0px 1000px #1e1e1e inset;
+  -webkit-text-fill-color: #1e1e1e;
+}
+.icon1,.icon2{
+  padding: 0 10px;
+  height: 100%;
+  background: #ffcb14;
+  display: flex;
+  align-items: center;
+}
+.eye,.eye-off{
+  margin-right: 10px;
+}
+.icon1:after,.icon2:after,.eye:after,.eye-off:after{  
+  width: 25px;
+  height: 25px;
+  content: '';
+  display: block;
+}
+.icon1:after{
+  background: url(../img/icon1.png)no-repeat center / cover;  
+}
+.icon2:after{
+  background: url(../img/icon2.png)no-repeat center / cover;
+}
+.eye:after{
+  background: url(../img/remove_red_eye.png)no-repeat center / cover;
+}
+.eye-off:after{
+  background: url(../img/visibility_off.png)no-repeat center / cover;
+}
+.tip{
+  display: none;
+}
+.tip.active{
+  display: block;
+}
+@media screen and (max-width: 768px),(orientation: portrait){
+  body{
+    background: url(../img/bgm.jpg)no-repeat top center / 100%;
+  }
+  .wallpaper{
+    position: static;
+    transform: translateX(0);
+    padding: 5vw 12vw;
+    width: auto;
+  }
+  .logo img {
+    max-width: 32vw;
+  }
+  .info {
+    margin: 2vw auto;
+  }
+  input{    
+    height: 7vw;
+    width: 55vw;
+  }
+  .icon1:after, .icon2:after, .eye:after, .eye-off:after{
+    width: 5vw;
+    height: 5vw;
+  }
+  .inputbox{
+    height: 8vw;
+  }
+  .icon1, .icon2 {
+    padding: 0 2vw;
+  }
+  .eye, .eye-off {
+    margin-right: 2vw;
+  }
+  button img{
+    width: 40vw;
+  }
+}
+/* iphoneX */
+@media screen and (min-height: 812px) and (max-width: 375px) and (orientation: portrait){
+  body{
+    background: url(../img/bgm.jpg)no-repeat bottom center / auto 100%;
+  }
+}

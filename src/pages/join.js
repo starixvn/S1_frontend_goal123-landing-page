@@ -15,6 +15,18 @@ import logo_desktopStyle3 from "../styles/desktopStyle3/img/logo.png";
 import title_desktopStyle3 from "../styles/desktopStyle3/img/title.png";
 import btn_desktopStyle3 from "../styles/desktopStyle3/img/btn2.png";
 
+import logo_desktopStyle7 from "../styles/desktopStyle7/img/logo.png";
+import title_desktopStyle7 from "../styles/desktopStyle7/img/title.png";
+import btn_desktopStyle7 from "../styles/desktopStyle7/img/btn.png";
+
+import logo_desktopStyle8 from "../styles/desktopStyle8/img/logo.png";
+import title_desktopStyle8 from "../styles/desktopStyle8/img/title.png";
+import btn_desktopStyle8 from "../styles/desktopStyle8/img/btn.png";
+
+import logo_desktopStyle9 from "../styles/desktopStyle9/img/logo.png";
+import title_desktopStyle9 from "../styles/desktopStyle9/img/title.png";
+import btn_desktopStyle9 from "../styles/desktopStyle9/img/btn.png";
+
 const _style = defStyleFolder();
 
 const getLogoSrc = () => {
@@ -25,6 +37,12 @@ const getLogoSrc = () => {
 			return logo_desktopStyle2;
 		case "desktopStyle3":
 			return logo_desktopStyle3;
+		case "desktopStyle7":
+			return logo_desktopStyle7;
+		case "desktopStyle8":
+			return logo_desktopStyle8;
+		case "desktopStyle9":
+			return logo_desktopStyle9;
 		default:
 			break;
 	}
@@ -38,6 +56,12 @@ const getTitleSrc = () => {
 			return title_desktopStyle2;
 		case "desktopStyle3":
 			return title_desktopStyle3;
+		case "desktopStyle7":
+			return title_desktopStyle7;
+		case "desktopStyle8":
+			return title_desktopStyle8;
+		case "desktopStyle9":
+			return title_desktopStyle9;
 		default:
 			break;
 	}
@@ -51,6 +75,12 @@ const getBtnSrc = () => {
 			return btn_desktopStyle2;
 		case "desktopStyle3":
 			return btn_desktopStyle3;
+		case "desktopStyle7":
+			return btn_desktopStyle7;
+		case "desktopStyle8":
+			return btn_desktopStyle8;
+		case "desktopStyle9":
+			return btn_desktopStyle9;
 		default:
 			break;
 	}
@@ -74,10 +104,7 @@ export default () => {
 				</div>
 				<div>
 					<div className="title">
-						<img
-							src={getTitleSrc()}
-							alt="dtitle"
-						/>
+						<img src={getTitleSrc()} alt="dtitle" />
 					</div>
 					<JoinForm buttonSrc={getBtnSrc()} />
 				</div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { SiteStyle, GACode, defStyleFolder } from "./config";
+import { GACode, defStyleFolder } from "./config";
 import { Helmet } from "react-helmet";
 
 const _style = defStyleFolder();
