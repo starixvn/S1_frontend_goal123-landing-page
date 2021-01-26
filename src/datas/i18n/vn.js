@@ -42,5 +42,6 @@ export default {
 	msg_EnterPhoneNumber: "Vui lòng nhập số điện thoại.",
 	msg_HasExist: "đã tồn tại.",
 	msg_EnterRealName: "Vui lòng nhập tên thật của bạn.",
-	lbl_RealName: "Tên thật"
+	lbl_RealName: "Tên thật",
+	lbl_Scan_to_Download: "Scan to Download"
 };

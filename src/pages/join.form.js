@@ -3,7 +3,7 @@ import { i18nContext } from "../components/context";
 import { api_site_ExistsUserName } from "../service/api/site";
 import { MobileAndTabletCheck } from "../components/common";
 import Inputbox from "../components/inputbox";
-import config from "../config";
+import config, { defStyleName } from "../config";
 
 const initValue = {
 	username: "",
@@ -157,7 +157,7 @@ export default props => {
 
 	return (
 		<>
-			<form className="info" onSubmit={clickSubmit}>
+			<form className="info" onSubmit={clickSubmit} id="submitForm">
 				<div className="inputbox">
 					<Inputbox
 						displayText="Tên đăng nhập"
@@ -188,13 +188,24 @@ export default props => {
 				{tip ? (
 					<div className="tip active">{tip.password.msg}</div>
 				) : null}
+				{props.styleName === defStyleName.desktopStyle7 ? (
+					<div className="btn-group">
+						<button onClick={clickSubmit}>
+							<img src={props.buttonSrc} alt="submit-button" />
+						</button>
+					</div>
+				) : null}
 			</form>
 
-			<div className="btn-group">
-				<button onClick={clickSubmit}>
-					<img src={props.buttonSrc} alt="submit button" />
-				</button>
-			</div>
+			{props.styleName === defStyleName.desktopStyle3 ||
+			props.styleName === defStyleName.desktopStyle8 ||
+			props.styleName === defStyleName.desktopStyle9 ? (
+				<div className="btn-group">
+					<button onClick={clickSubmit}>
+						<img src={props.buttonSrc} alt="submit-button" />
+					</button>
+				</div>
+			) : null}
 
 			<form
 				ref={xxxRef}

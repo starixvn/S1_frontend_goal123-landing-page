@@ -42,5 +42,6 @@ export default {
 	msg_EnterPhoneNumber: "Please enter phone number.",
 	msg_HasExist: "already exists.",
 	msg_EnterRealName: "Please enter your real name.",
-	lbl_RealName: "Real Name"
+	lbl_RealName: "Real Name",
+	lbl_Scan_to_Download: "Scan to Download"
 };

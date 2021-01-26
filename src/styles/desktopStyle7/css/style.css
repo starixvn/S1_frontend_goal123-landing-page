@@ -32,6 +32,26 @@ body{
 .title {
   margin-top: 3vw;
 }
+.infoModule{
+  display: flex;
+  align-items: center;
+}
+.infoModule > div:first-child{
+  flex: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.qrtitle{
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcb14;
+}
+.qrtitle + img{
+  margin: 5px 0 10px;
+  width: 53%;
+}
 .info{
   margin: 20px auto;
   max-width: 400px;
@@ -115,6 +135,12 @@ input:-webkit-autofill:active{
     transform: translateX(0);
     padding: 5vw 12vw;
     width: auto;
+  }
+  .infoModule{
+    flex-direction:column;
+  }
+  .infoModule > div:first-child{
+    margin-right: 0;
   }
   .logo img {
     max-width: 32vw;

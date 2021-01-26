@@ -19,10 +19,19 @@ export const GACode = {
 export const SiteStyle =
 	process.env.NODE_ENV === "production"
 		? process.env.REACT_APP_STYLE
-		: defStyle[7];
+		: defStyle[1];
 
 export const defStyleFolder = () => {
 	return `desktopStyle${SiteStyle}`;
+};
+
+export const defStyleName = {
+	desktopStyle1: "desktopStyle1",
+	desktopStyle2: "desktopStyle2",
+	desktopStyle3: "desktopStyle3",
+	desktopStyle7: "desktopStyle7",
+	desktopStyle8: "desktopStyle8",
+	desktopStyle9: "desktopStyle9"
 };
 
 export default process.env.NODE_ENV === "production"

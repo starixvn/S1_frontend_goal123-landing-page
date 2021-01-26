@@ -34,7 +34,29 @@ body{
 .title img{
   width: 100%;
 }
+.infoModule{
+  display: flex;
+  align-items: center;
+}
+.infoModule > div:first-child{
+  flex: 0.8;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.qrtitle{
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcb14;
+}
+.qrtitle + img{
+  margin: 5px 0 10px;
+  width: min-content;
+}
 .info{
+  flex: 1;
   margin: 20px auto;
   padding: 10px;
   display: flex;
@@ -126,6 +148,12 @@ input:-webkit-autofill:active{
 @media screen and (max-width: 768px),(orientation: portrait){
   body{
     background: url(../img/bgm.jpg)no-repeat top center / 100%;
+  }  
+  .infoModule{
+    flex-direction:column;
+  }
+  .infoModule > div:first-child{
+    margin-right: 0;
   }
   .wallpaper{
     position: static;
