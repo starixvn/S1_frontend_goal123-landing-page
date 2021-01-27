@@ -21,7 +21,7 @@ const passwordCheck = val => {
 	let checked = false;
 	let msg = "";
 
-	const regx = /^[a-zA-Z0-9@$*!%#?&]*$/;
+	const regx = /^(?=.{6,15}$)(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*]).*$/;
 	if (val === "") {
 		checked = false;
 		msg = "msg_PasswordReq";
@@ -58,8 +58,6 @@ export default props => {
 
 	const EditField = (col, e) => {
 		let val = e.target.value;
-		val = val.replace(/[\W]/g, "");
-
 		setUserValue(prev => ({
 			...prev,
 			[col]: val
