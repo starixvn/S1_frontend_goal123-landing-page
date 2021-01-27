@@ -89,7 +89,7 @@ button img{
   background: white;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   height: 62px;
   border-radius: 5px;
 }
@@ -140,7 +140,8 @@ input:-webkit-autofill:active{
   color: red;
   width: 100%;
   display: none;
-  transform: translateY(-75%);
+  /* transform: translateY(-75%); */
+  margin-bottom: 10px;
 }
 .tip.active{
   display: block;
