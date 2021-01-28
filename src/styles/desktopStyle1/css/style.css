@@ -185,7 +185,7 @@ input:-webkit-autofill:active{
     height: 8vw;
   }
   .tip{
-    transform: translateY(-33%);
+    /* transform: translateY(-33%); */
     font-size: 3vw;
   }
   .icon1, .icon2 {
