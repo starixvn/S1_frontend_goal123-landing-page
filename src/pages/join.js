@@ -137,7 +137,7 @@ export default () => {
 
 	const clickDownload = () => {
 		window.location.assign(
-			"https://s3-ap-northeast-1.amazonaws.com/grd.fileshare/sasa/goal123/android/Goal123_1.0.19.apk"
+			"https://s3-ap-northeast-1.amazonaws.com/grd.fileshare/sasa/goal123/android/Goal123_1.0.23.apk"
 		);
 	};
 
