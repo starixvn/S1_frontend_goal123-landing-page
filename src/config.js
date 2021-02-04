@@ -15,7 +15,7 @@ export const GACode = {
 	[defStyle[7]]: "G-SJ2YMRP6YN",
 	[defStyle[8]]: "G-KX02GRXQM6",
 	[defStyle[9]]: "G-NPJR2TX1CN",
-	[defStyle[10]]: "G-none"
+	[defStyle[10]]: "G-FKFDHQHZ69"
 };
 
 export const SiteStyle =
