@@ -150,14 +150,6 @@ export default props => {
 		}
 	};
 
-	const showTip2Class = () => {
-		let result = "";
-		if (props.styleName === defStyleName.desktopStyle10) {
-			result = " tip2";
-		}
-		return result;
-	};
-
 	return (
 		<>
 			<form className="info" onSubmit={clickSubmit} id="submitForm">
@@ -189,9 +181,7 @@ export default props => {
 					/>
 				</div>
 				{tip ? (
-					<div className={`tip active${showTip2Class()}`}>
-						{tip.password.msg}
-					</div>
+					<div className={`tip active`}>{tip.password.msg}</div>
 				) : null}
 				{props.styleName === defStyleName.desktopStyle7 ? (
 					<div className="btn-group">

@@ -60,6 +60,7 @@ body{
   background: black;
   border-radius: 5px;
   border: 1px solid #ffcb14;
+  max-width: 400px;
 }
 .smallTitle{
   font-weight: bold;
@@ -84,7 +85,7 @@ button img{
   background: white;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
   height: 45px;
   border-radius: 5px;
 }
@@ -135,11 +136,7 @@ input:-webkit-autofill:active{
   color: red;
   width: 100%;
   display: none;
-  transform: translateY(-55%);
-  position: relative;
-}
-.tip2 {
-  transform: translateY(-40%);
+  margin-bottom: 7px;
 }
 .tip.active{
   display: block;
@@ -187,7 +184,6 @@ input:-webkit-autofill:active{
     height: 8vw;
   }
   .tip{
-    transform: translateY(-25%);
     font-size: 3vw;
   }
   .icon1, .icon2 {
@@ -201,12 +197,6 @@ input:-webkit-autofill:active{
   }  
   button img{
     width: 45vw;
-  }
-}
-
-@media (max-width: 375px) {
-  .tip{
-    transform: translateY(-18%);
   }
 }
 /* iphoneX */
