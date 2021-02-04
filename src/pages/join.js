@@ -34,6 +34,13 @@ import logo_desktopStyle9 from "../styles/desktopStyle9/img/logo.png";
 import title_desktopStyle9 from "../styles/desktopStyle9/img/title.png";
 import btn_desktopStyle9 from "../styles/desktopStyle9/img/btn.png";
 
+import logo_desktopStyle10 from "../styles/desktopStyle10/img/logo.png";
+import title_desktopStyle10 from "../styles/desktopStyle10/img/title.png";
+import btn_desktopStyle10 from "../styles/desktopStyle10/img/btn2.png";
+import qrCode_desktopStyle10 from "../styles/desktopStyle10/img/QRcode.png";
+import btnDownload_desktopStyle10 from "../styles/desktopStyle10/img/btn1.png";
+import qrCode_title_desktopStyle10 from "../styles/desktopStyle10/img/qr_title.png";
+
 const styleName = defStyleFolder();
 
 const getLogoSrc = () => {
@@ -50,6 +57,8 @@ const getLogoSrc = () => {
 			return logo_desktopStyle8;
 		case defStyleName.desktopStyle9:
 			return logo_desktopStyle9;
+		case defStyleName.desktopStyle10:
+			return logo_desktopStyle10;
 		default:
 			break;
 	}
@@ -69,6 +78,8 @@ const getTitleSrc = () => {
 			return title_desktopStyle8;
 		case defStyleName.desktopStyle9:
 			return title_desktopStyle9;
+		case defStyleName.desktopStyle10:
+			return title_desktopStyle10;
 		default:
 			break;
 	}
@@ -88,6 +99,8 @@ const getBtnSrc = () => {
 			return btn_desktopStyle8;
 		case defStyleName.desktopStyle9:
 			return btn_desktopStyle9;
+		case defStyleName.desktopStyle10:
+			return btn_desktopStyle10;
 		default:
 			break;
 	}
@@ -101,6 +114,8 @@ const getQRCode = () => {
 			return qrCode_desktopStyle2;
 		case defStyleName.desktopStyle7:
 			return qrCode_desktopStyle7;
+		case defStyleName.desktopStyle10:
+			return qrCode_desktopStyle10;
 		default:
 			break;
 	}
@@ -114,6 +129,8 @@ const getDownloadBtn = () => {
 			return btnDownload_desktopStyle2;
 		case defStyleName.desktopStyle7:
 			return btnDownload_desktopStyle7;
+		case defStyleName.desktopStyle10:
+			return btnDownload_desktopStyle10;
 		default:
 			break;
 	}
@@ -133,7 +150,8 @@ export default () => {
 	let isShowQRCode =
 		styleName === defStyleName.desktopStyle1 ||
 		styleName === defStyleName.desktopStyle2 ||
-		styleName === defStyleName.desktopStyle7;
+		styleName === defStyleName.desktopStyle7 ||
+		styleName === defStyleName.desktopStyle10;
 
 	const clickDownload = () => {
 		window.location.assign(
@@ -155,7 +173,15 @@ export default () => {
 						<div className="infoModule">
 							<div>
 								<div className="qrtitle">
-									{i18n["lbl_Scan_to_Download"]}
+									{styleName ===
+									defStyleName.desktopStyle10 ? (
+										<img
+											src={qrCode_title_desktopStyle10}
+											alt="dtitle"
+										/>
+									) : (
+										i18n["lbl_Scan_to_Download"]
+									)}
 								</div>
 								<img src={getQRCode()} alt="qrcode" />
 								<button onClick={clickDownload}>
@@ -172,7 +198,8 @@ export default () => {
 						</div>
 					</div>
 					{styleName === defStyleName.desktopStyle1 ||
-					styleName === defStyleName.desktopStyle2 ? (
+					styleName === defStyleName.desktopStyle2 ||
+					styleName === defStyleName.desktopStyle10 ? (
 						<div className="btn-group">
 							<button type="submit" form="submitForm">
 								<img src={getBtnSrc()} alt="submit_button" />

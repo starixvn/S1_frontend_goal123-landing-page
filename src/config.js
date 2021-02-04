@@ -4,7 +4,8 @@ export const defStyle = {
 	3: 3,
 	7: 7,
 	8: 8,
-	9: 9
+	9: 9,
+	10: 10
 };
 
 export const GACode = {
@@ -13,13 +14,14 @@ export const GACode = {
 	[defStyle[3]]: "UA-163812389-5",
 	[defStyle[7]]: "G-SJ2YMRP6YN",
 	[defStyle[8]]: "G-KX02GRXQM6",
-	[defStyle[9]]: "G-NPJR2TX1CN"
+	[defStyle[9]]: "G-NPJR2TX1CN",
+	[defStyle[10]]: "G-none"
 };
 
 export const SiteStyle =
 	process.env.NODE_ENV === "production"
 		? process.env.REACT_APP_STYLE
-		: defStyle[1];
+		: defStyle[10];
 
 export const defStyleFolder = () => {
 	return `desktopStyle${SiteStyle}`;
@@ -31,7 +33,8 @@ export const defStyleName = {
 	desktopStyle3: "desktopStyle3",
 	desktopStyle7: "desktopStyle7",
 	desktopStyle8: "desktopStyle8",
-	desktopStyle9: "desktopStyle9"
+	desktopStyle9: "desktopStyle9",
+	desktopStyle10: "desktopStyle10"
 };
 
 export default process.env.NODE_ENV === "production"

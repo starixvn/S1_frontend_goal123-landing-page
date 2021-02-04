@@ -181,7 +181,7 @@ export default props => {
 					/>
 				</div>
 				{tip ? (
-					<div className="tip active">{tip.password.msg}</div>
+					<div className={`tip active`}>{tip.password.msg}</div>
 				) : null}
 				{props.styleName === defStyleName.desktopStyle7 ? (
 					<div className="btn-group">
