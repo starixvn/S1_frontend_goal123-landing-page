@@ -154,7 +154,7 @@ export default () => {
 		styleName === defStyleName.desktopStyle10;
 
 	const clickDownload = () => {
-		window.location.assign(
+		window.open(
 			"https://mars.fadatsai88.com/v1/App?path=goal123entry_sports_android.apk"
 		);
 	};
