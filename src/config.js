@@ -21,7 +21,7 @@ export const GACode = {
 export const SiteStyle =
 	process.env.NODE_ENV === "production"
 		? process.env.REACT_APP_STYLE
-		: defStyle[10];
+		: defStyle[1];
 
 export const defStyleFolder = () => {
 	return `desktopStyle${SiteStyle}`;
