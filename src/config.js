@@ -22,7 +22,7 @@ export const GACode = {
 export const SiteStyle =
 	process.env.NODE_ENV === "production"
 		? process.env.REACT_APP_STYLE
-		: defStyle[17];
+		: defStyle[15];
 
 export const defStyleFolder = () => {
 	return `desktopStyle${SiteStyle}`;
@@ -44,11 +44,11 @@ export default process.env.NODE_ENV === "production"
 			t_and_cURL: ""
 	  }
 	: {
-			apiURL: "http://52.77.157.115:5068",
-			imgUrl: "http://52.77.157.115:5068",
-			t_and_cURL: "http://52.77.157.115:5068",
-			openMobileURL: "http://52.77.157.115:5068",
-			openDesktopURL: "http://52.77.157.115:5068"
+			apiURL: "http://stag.goal123.com",
+			imgUrl: "http://stag.goal123.com",
+			t_and_cURL: "http://stag.goal123.com",
+			openMobileURL: "http://stag.goal123.com",
+			openDesktopURL: "http://stag.goal123.com"
 
 			// apiURL: "http://www.n88dev.com",
 			// imgUrl: "http://www.n88dev.com",
