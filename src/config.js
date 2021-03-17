@@ -49,10 +49,4 @@ export default process.env.NODE_ENV === "production"
 			t_and_cURL: "http://stag.goal123.com",
 			openMobileURL: "http://stag.goal123.com",
 			openDesktopURL: "http://stag.goal123.com"
-
-			// apiURL: "http://www.n88dev.com",
-			// imgUrl: "http://www.n88dev.com",
-			// t_and_cURL: "http://www.n88dev.com",
-			// openMobileURL: "http://www.n88dev.com",
-			// openDesktopURL: "http://www.n88dev.com"
 	  };

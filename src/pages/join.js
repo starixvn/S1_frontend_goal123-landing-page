@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from "react";
-import { i18nContext } from "../components/context";
+import React, { useEffect } from "react";
+// import { i18nContext } from "../components/context";
 import { defStyleFolder, defStyleName } from "../config";
 import { getUrlParameter } from "../components/common";
 import JoinForm from "./join.form";
@@ -119,11 +119,10 @@ const getDownloadBtn = () => {
 };
 
 export default () => {
-	const { i18n } = useContext(i18nContext);
+	// const { i18n } = useContext(i18nContext);
 	useEffect(() => {
-		let errorCode = getUrlParameter("errorCode");
+		// let errorCode = getUrlParameter("errorCode");
 		let message = getUrlParameter("message");
-
 		if (message) {
 			alert(message);
 		}
@@ -137,30 +136,27 @@ export default () => {
 
 	return (
 		<div className="wallpaper">
-			<div>
-				<div className="logo">
-					<img alt="logo" src={getLogoSrc()} />
-				</div>
-				<div className="title">
-					<img src={getTitleSrc()} alt="dtitle" />
-				</div>
-				<div className="infoModule">
-					<div>
-						<div className="qrtitle">
-							{styleName === defStyleName.desktopStyle14 ||
-							styleName === defStyleName.desktopStyle15 ? (
-								<img src={getImgQRTitle()} alt="dtitle" />
-							) : null}
-						</div>
-						<img src={getQRCode()} alt="qrcode" />
-						<button onClick={clickDownload}>
-							<img src={getDownloadBtn()} alt="download" />
-						</button>
-					</div>
-					<JoinForm buttonSrc={getBtnSrc()} styleName={styleName} />
-				</div>
+			<div className="logo">
+				<img alt="logo" src={getLogoSrc()} />
 			</div>
-
+			<div className="title">
+				<img src={getTitleSrc()} alt="title" />
+			</div>
+			<div className="infoModule">
+				<div>
+					<div className="qrtitle">
+						{styleName === defStyleName.desktopStyle14 ||
+						styleName === defStyleName.desktopStyle15 ? (
+							<img src={getImgQRTitle()} alt="qrtitle" />
+						) : null}
+					</div>
+					<img src={getQRCode()} alt="qrcode" />
+					<button onClick={clickDownload}>
+						<img src={getDownloadBtn()} alt="download_button" />
+					</button>
+				</div>
+				<JoinForm />
+			</div>
 			<div className="btn-group">
 				<button type="submit" form="submitForm">
 					<img src={getBtnSrc()} alt="submit_button" />
