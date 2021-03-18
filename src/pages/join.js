@@ -4,44 +4,44 @@ import { defStyleFolder, defStyleName } from "../config";
 import { getUrlParameter } from "../components/common";
 import JoinForm from "./join.form";
 
-import logo_14 from "../styles/desktopStyle14/img/logo.png";
-import title_14 from "../styles/desktopStyle14/img/title.png";
-import btn_14 from "../styles/desktopStyle14/img/btn2.png";
-import qrCode_14 from "../styles/desktopStyle14/img/QRcode.png";
-import btnDownload_14 from "../styles/desktopStyle14/img/btn1.png";
-import img_QRTitle_14 from "../styles/desktopStyle14/img/qr_title.png";
+import logo_1 from "../styles/desktopStyle1/img/logo.png";
+import title_1 from "../styles/desktopStyle1/img/title.png";
+import btn_1 from "../styles/desktopStyle1/img/btn2.png";
+import qrCode_1 from "../styles/desktopStyle1/img/QRcode.png";
+import btnDownload_1 from "../styles/desktopStyle1/img/btn1.png";
+import img_QRTitle_1 from "../styles/desktopStyle1/img/qr_title.png";
 
-import logo_15 from "../styles/desktopStyle15/img/logo.png";
-import title_15 from "../styles/desktopStyle15/img/title.png";
-import btn_15 from "../styles/desktopStyle15/img/btn2.png";
-import qrCode_15 from "../styles/desktopStyle15/img/QRcode.png";
-import btnDownload_15 from "../styles/desktopStyle15/img/btn1.png";
-import img_QRTitle_15 from "../styles/desktopStyle15/img/qr_title.png";
+import logo_2 from "../styles/desktopStyle2/img/logo.png";
+import title_2 from "../styles/desktopStyle2/img/title.png";
+import btn_2 from "../styles/desktopStyle2/img/btn2.png";
+import qrCode_2 from "../styles/desktopStyle2/img/QRcode.png";
+import btnDownload_2 from "../styles/desktopStyle2/img/btn1.png";
+import img_QRTitle_2 from "../styles/desktopStyle2/img/qr_title.png";
 
-import logo_16 from "../styles/desktopStyle16/img/logo.png";
-import title_16 from "../styles/desktopStyle16/img/title.png";
-import btn_16 from "../styles/desktopStyle16/img/btn2.png";
-import qrCode_16 from "../styles/desktopStyle16/img/qrcode.png";
-import btnDownload_16 from "../styles/desktopStyle16/img/btn1.png";
+import logo_3 from "../styles/desktopStyle3/img/logo.png";
+import title_3 from "../styles/desktopStyle3/img/title.png";
+import btn_3 from "../styles/desktopStyle3/img/btn2.png";
+import qrCode_3 from "../styles/desktopStyle3/img/qrcode.png";
+import btnDownload_3 from "../styles/desktopStyle3/img/btn1.png";
 
-import logo_17 from "../styles/desktopStyle17/img/logo.png";
-import title_17 from "../styles/desktopStyle17/img/title.png";
-import btn_17 from "../styles/desktopStyle17/img/btn2.png";
-import qrCode_17 from "../styles/desktopStyle17/img/qrcode.png";
-import btnDownload_17 from "../styles/desktopStyle17/img/btn1.png";
+import logo_4 from "../styles/desktopStyle4/img/logo.png";
+import title_4 from "../styles/desktopStyle4/img/title.png";
+import btn_4 from "../styles/desktopStyle4/img/btn2.png";
+import qrCode_4 from "../styles/desktopStyle4/img/qrcode.png";
+import btnDownload_4 from "../styles/desktopStyle4/img/btn1.png";
 
 const styleName = defStyleFolder();
 
 const getLogoSrc = () => {
 	switch (styleName) {
-		case defStyleName.desktopStyle14:
-			return logo_14;
-		case defStyleName.desktopStyle15:
-			return logo_15;
-		case defStyleName.desktopStyle16:
-			return logo_16;
-		case defStyleName.desktopStyle17:
-			return logo_17;
+		case defStyleName.desktopStyle1:
+			return logo_1;
+		case defStyleName.desktopStyle2:
+			return logo_2;
+		case defStyleName.desktopStyle3:
+			return logo_3;
+		case defStyleName.desktopStyle4:
+			return logo_4;
 		default:
 			break;
 	}
@@ -49,14 +49,14 @@ const getLogoSrc = () => {
 
 const getTitleSrc = () => {
 	switch (styleName) {
-		case defStyleName.desktopStyle14:
-			return title_14;
-		case defStyleName.desktopStyle15:
-			return title_15;
-		case defStyleName.desktopStyle16:
-			return title_16;
-		case defStyleName.desktopStyle17:
-			return title_17;
+		case defStyleName.desktopStyle1:
+			return title_1;
+		case defStyleName.desktopStyle2:
+			return title_2;
+		case defStyleName.desktopStyle3:
+			return title_3;
+		case defStyleName.desktopStyle4:
+			return title_4;
 		default:
 			break;
 	}
@@ -64,14 +64,14 @@ const getTitleSrc = () => {
 
 const getBtnSrc = () => {
 	switch (styleName) {
-		case defStyleName.desktopStyle14:
-			return btn_14;
-		case defStyleName.desktopStyle15:
-			return btn_15;
-		case defStyleName.desktopStyle16:
-			return btn_16;
-		case defStyleName.desktopStyle17:
-			return btn_17;
+		case defStyleName.desktopStyle1:
+			return btn_1;
+		case defStyleName.desktopStyle2:
+			return btn_2;
+		case defStyleName.desktopStyle3:
+			return btn_3;
+		case defStyleName.desktopStyle4:
+			return btn_4;
 		default:
 			break;
 	}
@@ -79,14 +79,14 @@ const getBtnSrc = () => {
 
 const getQRCode = () => {
 	switch (styleName) {
-		case defStyleName.desktopStyle14:
-			return qrCode_14;
-		case defStyleName.desktopStyle15:
-			return qrCode_15;
-		case defStyleName.desktopStyle16:
-			return qrCode_16;
-		case defStyleName.desktopStyle17:
-			return qrCode_17;
+		case defStyleName.desktopStyle1:
+			return qrCode_1;
+		case defStyleName.desktopStyle2:
+			return qrCode_2;
+		case defStyleName.desktopStyle3:
+			return qrCode_3;
+		case defStyleName.desktopStyle4:
+			return qrCode_4;
 		default:
 			break;
 	}
@@ -94,10 +94,10 @@ const getQRCode = () => {
 
 const getImgQRTitle = () => {
 	switch (styleName) {
-		case defStyleName.desktopStyle14:
-			return img_QRTitle_14;
-		case defStyleName.desktopStyle15:
-			return img_QRTitle_15;
+		case defStyleName.desktopStyle1:
+			return img_QRTitle_1;
+		case defStyleName.desktopStyle2:
+			return img_QRTitle_2;
 		default:
 			break;
 	}
@@ -105,14 +105,14 @@ const getImgQRTitle = () => {
 
 const getDownloadBtn = () => {
 	switch (styleName) {
-		case defStyleName.desktopStyle14:
-			return btnDownload_14;
-		case defStyleName.desktopStyle15:
-			return btnDownload_15;
-		case defStyleName.desktopStyle16:
-			return btnDownload_16;
-		case defStyleName.desktopStyle17:
-			return btnDownload_17;
+		case defStyleName.desktopStyle1:
+			return btnDownload_1;
+		case defStyleName.desktopStyle2:
+			return btnDownload_2;
+		case defStyleName.desktopStyle3:
+			return btnDownload_3;
+		case defStyleName.desktopStyle4:
+			return btnDownload_4;
 		default:
 			break;
 	}
@@ -145,8 +145,8 @@ export default () => {
 			<div className="infoModule">
 				<div>
 					<div className="qrtitle">
-						{styleName === defStyleName.desktopStyle14 ||
-						styleName === defStyleName.desktopStyle15 ? (
+						{styleName === defStyleName.desktopStyle1 ||
+						styleName === defStyleName.desktopStyle2 ? (
 							<img src={getImgQRTitle()} alt="qrtitle" />
 						) : null}
 					</div>
