@@ -13,10 +13,10 @@ export const GACode = {
 	// [defStyle[8]]: "G-KX02GRXQM6",
 	// [defStyle[9]]: "G-NPJR2TX1CN",
 	// [defStyle[10]]: "G-FKFDHQHZ69",
-	[defStyle[1]]: "G-",
-	[defStyle[2]]: "G-",
-	[defStyle[3]]: "G-",
-	[defStyle[4]]: "G-"
+	[defStyle[1]]: "UA-163812389-3",
+	[defStyle[2]]: "UA-163812389-4",
+	[defStyle[3]]: "UA-163812389-5",
+	[defStyle[4]]: "G-SJ2YMRP6YN"
 };
 
 export const SiteStyle =
