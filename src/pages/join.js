@@ -139,7 +139,7 @@ export default () => {
 	};
 
 	const clickIosDownload = () => {
-		window.open("https://appdage.com/76B5E24D6EC46B4");
+		window.open("https://appdage.com/76B5E24D6EC46B4B");
 	};
 
 	return (
