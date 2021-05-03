@@ -70,7 +70,6 @@ export default props => {
 			let result = await usernameCheck(val);
 			checked = result.checked;
 			msg = result.msg;
-			console.log(checked, msg);
 		} else if (col === "password") {
 			let result = passwordCheck(val);
 			checked = result.checked;
