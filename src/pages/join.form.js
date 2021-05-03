@@ -70,6 +70,7 @@ export default props => {
 			let result = await usernameCheck(val);
 			checked = result.checked;
 			msg = result.msg;
+			console.log(checked, msg);
 		} else if (col === "password") {
 			let result = passwordCheck(val);
 			checked = result.checked;
@@ -81,7 +82,7 @@ export default props => {
 				...prev,
 				[col]: {
 					checked: checked,
-					msg: i18n[msg]
+					msg: col === "username" ? msg : i18n[msg]
 				}
 			};
 		});
@@ -92,7 +93,7 @@ export default props => {
 			const res = await api_site_ExistsUserName({ UserName: val });
 			if (isMountedRef.current) {
 				if (res.data.errorCode === 0) {
-					return !res.data.data;
+					return { result: !res.data.data, msg: res.data.message };
 				}
 			}
 		} catch (error) {
@@ -107,14 +108,15 @@ export default props => {
 		let msg = "";
 		if (val === "") {
 			checked = false;
-			msg = "msg_UsernameReq";
+			msg = "Tên đăng nhập là bắt buộc.";
 		} else if (val !== "") {
+			const result_nameRepeatCheck = await nameRepeatCheck(val);
 			if (val.length < 6 || val.length > 18) {
 				checked = false;
-				msg = "msg_UsernameLength";
-			} else if ((await nameRepeatCheck(val)) === false) {
+				msg = "6-18 ký tự chữ và số (A-Z, a-z, 0-9)";
+			} else if (result_nameRepeatCheck.result === false) {
 				checked = false;
-				msg = "msg_UsernameNotAvailable";
+				msg = result_nameRepeatCheck.msg;
 			}
 		}
 		return { checked, msg };
@@ -130,7 +132,7 @@ export default props => {
 					...prev,
 					username: {
 						checked: _usernameCheck.checked,
-						msg: i18n[_usernameCheck.msg]
+						msg: _usernameCheck.msg
 					},
 					password: {
 						checked: _passwordCheck.checked,
