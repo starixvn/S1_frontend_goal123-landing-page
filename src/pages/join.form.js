@@ -21,14 +21,14 @@ const passwordCheck = val => {
 	let checked = false;
 	let msg = "";
 
-	const regx = /^(?=.{6,15}$)(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*]).*$/;
+	const regx = /^(?=.{6,15}$)[a-zA-Z0-9!@#$%^&*]*$/;
 	if (val === "") {
 		checked = false;
 		msg = "msg_PasswordReq";
 	} else if (val != null) {
 		if (!regx.test(val)) {
 			checked = false;
-			msg = "msg_PasswordVaildate";
+			msg = "lbl_PasswordTooltip";
 		} else {
 			checked = true;
 		}
