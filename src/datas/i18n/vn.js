@@ -43,5 +43,6 @@ export default {
 	msg_HasExist: "đã tồn tại.",
 	msg_EnterRealName: "Vui lòng nhập tên thật của bạn.",
 	lbl_RealName: "Tên thật",
-	lbl_Scan_to_Download: "Quét mã để Tải xuống"
+	lbl_Scan_to_Download: "Quét mã để Tải xuống",
+	lbl_PasswordTooltip: "Mật khẩu phải có 6-15 ký tự."
 };

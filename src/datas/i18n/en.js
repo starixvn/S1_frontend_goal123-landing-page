@@ -43,5 +43,6 @@ export default {
 	msg_HasExist: "already exists.",
 	msg_EnterRealName: "Please enter your real name.",
 	lbl_RealName: "Real Name",
-	lbl_Scan_to_Download: "Scan to Download"
+	lbl_Scan_to_Download: "Scan to Download",
+	lbl_PasswordTooltip: "Password must be 6-15 characters only."
 };
